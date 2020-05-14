@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Muli:wght@500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header-bar {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(rgb(20, 168, 0), rgb(0, 109, 15));
+}
+
+.header-bar h1 {
+    
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 5%;
+    font-weight: lighter;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    letter-spacing: -.3rem;
+    color: rgb(216, 216, 216)
+}
+
+.header-bar p {
+    position: absolute;
+    top: 50%;
+    right:2%;
+    transform: translate(0, -50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size:.6rem;
+    color: rgb(216, 216, 216);
+    letter-spacing: .3rem;
+}
+
+.header-bar img {
+    position: absolute;
+    top: 49%;
+    transform: translate(0, -50%);
+    left: 3%;
+    width: 2.3rem;
+}
+
+.header-shadow-bar {
+    width: 100%;
+    height: .5rem;
+    background-image: linear-gradient(rgb(114, 114, 114), rgb(219, 219, 219));
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr;
+}
+
+.list {
+    position: sticky;
+    top: 108px;
+
+}
+
+.list div {
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+    
+}
+
+.list a {
+    position: relative;
+    background-image: linear-gradient(rgb(87, 87, 87), rgb(49, 49, 49));
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: silver;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05rem;
+    transition: color 200ms ease-in-out;
+}
+
+.list a:hover {
+    background-image: linear-gradient(rgb(20, 168, 0), rgb(0, 109, 15));
+    color: white;
+}
+
+.list a:active {
+    top: 1px;
+}
+
+.box1 {
+    background-color: rgb(219, 219, 219);
+    width: auto;
+}
+
+.box2 {
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    
+}
+
+.box2 p {
+    color: rgb(112, 112, 112);
+    padding: 20px;
+    text-align: justify;
+}
+
+.search-section {
+    position: sticky;
+    top: 108px;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(219, 219, 219, 0.3);
+    backdrop-filter: blur(5px);
+}
+.search-section div {
+    float: left;
+    position: relative;
+    top: 50%;
+    left: 2rem;
+    transform: translate(0, -50%);
+}
+
+.search-section p {
+    font-size: 1.2rem;
+    color: rgb(29, 29, 29);
+    font-family: 'Josefin', sans-serif;
+    margin-right: 1rem;
+}
+
+.search-section input {
+    width: 350px;
+    height: auto;
+    font-size: 1.1em;
+    color: rgb(71, 71, 71);
+    background: rgb(255, 255, 255);
+    padding: 3px;
+    border-left-style: solid;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    border-left-color: rgb(16, 138, 0);
+    border-left-width: 8px;
+    border-radius: 3px;
+}
+
+.box3 {
+    background-color: rgb(219, 219, 219);
+    width: auto;
+}
