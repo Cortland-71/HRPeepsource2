@@ -64,13 +64,14 @@ header {
     grid-template-columns: 1fr 5fr 2fr;
 }
 
-.list {
+.buttonlist {
     position: sticky;
     top: 108px;
+    
 
 }
 
-.list div {
+.buttonlist div {
     margin-bottom: 5px;
     margin-left: 10px;
     margin-right: 10px;
@@ -78,7 +79,7 @@ header {
     
 }
 
-.list a {
+.buttonlist a {
 
     position: relative;
     background-image: linear-gradient(rgb(87, 87, 87), rgb(49, 49, 49));
@@ -90,17 +91,18 @@ header {
     color: silver;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .05rem;
-    transition: color 200ms ease-in-out;
+    transition: color 200ms ease-out;
 }
 
-.list a:hover {
+.buttonlist a:hover {
     background-image: linear-gradient(rgb(20, 168, 0), rgb(0, 109, 15));
     color: white;
 }
 
-.list a:active {
+.buttonlist a:active {
     top: 1px;
 }
+
 
 .box1 {
     background-color: rgb(219, 219, 219);
@@ -131,7 +133,7 @@ header {
 .search-section div {
     float: left;
     position: relative;
-    top: 33%;
+    top: 50%;
 
     transform: translate(0, -50%);
 }
@@ -140,10 +142,7 @@ header {
     font-size: 1.2rem;
     color: rgb(29, 29, 29);
     font-family: 'Josefin', sans-serif;
-    margin-right: 2px;
 }
-
-
 
 .search-section input {
     width: 350px;
@@ -164,68 +163,59 @@ header {
 }
 
 .box3 {
-
     background-color: rgb(219, 219, 219);
     width: auto;
 }
 
-.box3 div {
+.form-section {
+    
+    position: sticky;
+    top: 108px;
+    width: 100%;
+    height: 800px;
+    
+}
+
+.form-section div {
     position: absolute;
+    width: 100%;
+    height: 800px;
+    
+    
+   
 }
 
 #detailDiv {
-    width: 100px;
-    height: 100px;
-    background-color: green;
     z-index: 1;
+    background-color: green;
 }
 
 #performanceDiv {
-    width: 100px;
-    height: 100px;
     background-color: rgb(128, 126, 0);
-    z-index: 0;
 }
 
 #contactsDiv {
-    width: 100px;
-    height: 100px;
     background-color: rgb(34, 134, 228);
-    z-index: 0;
 }
 
 #wagesDiv {
-    width: 100px;
-    height: 100px;
     background-color: rgb(192, 191, 135);
-    z-index: 0;
 }
 
 #taxesDiv {
-    width: 100px;
-    height: 100px;
     background-color: rgb(42, 48, 82);
-    z-index: 0;
 }
 
 #eeoDiv {
-    width: 100px;
-    height: 100px;
     background-color: rgb(70, 0, 128);
-    z-index: 0;
 }
 
 #emergancyDiv {
-    width: 100px;
-    height: 100px;
     background-color: rgb(128, 0, 90);
-    z-index: 0;
 }
 
 #seperationsDiv {
-    width: 100px;
-    height: 100px;
-    background-color: rgb(128, 0, 0);
-    z-index: 0;
+    
+    background-color: rgb(17, 17, 17);
 }
 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tableStyle.css">
+    <title>HRPeepsource v1.0</title>
+    <script src="jquery.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var navList = ['#detailDiv', '#performanceDiv', '#contactsDiv',
+                '#wagesDiv', '#taxesDiv', '#emergancyDiv', '#seperationsDiv', '#eeoDiv'];
+
+            var numOfNavBtn = 9;
+
+            $(".search-section div").hide().slideDown(500);
+
+            for (var i = 0; i < numOfNavBtn; i++) {
+                $("#" + i).hide();
+                $("#" + i).fadeIn((i + 1) * 80);
+            }
+
+            $(".navBtn").on('click', function () {
+                var index = $(this).attr("id");
+                var selectedDiv = navList[index];
+                $(selectedDiv).show();
+                for (var i = 0; i < numOfNavBtn; i++) {
+                    if (selectedDiv != navList[i]) {
+                        $(navList[i]).hide();
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header-bar">
+            <div>
+                <img src="pics/personIcon.png" alt="">
+            </div>
+            <div>
+                <h1>HRPeepsource</h1>
+            </div>
+            <div>
+                <p>YAVAPAI GAMING AGENCY 2020</p>
+            </div>
+        </div>
+        <div class="header-shadow-bar"></div>
+    </header>
+    <main>
+        <div class="main-grid">
+            <div class="box1">
+                <div class="buttonlist" id="navList">
+                    <div><a class="navBtn" id="0" href="#">DETAIL</a></div>
+                    <div><a class="navBtn" id="1" href="#">PERFORMANCE</a></div>
+                    <div><a class="navBtn" id="2" href="#">CONTACTS</a></div>
+                    <div><a class="navBtn" id="3" href="#">WAGES</a></div>
+                    <div><a class="navBtn" id="4" href="#">TAXES</a></div>
+                    <div><a class="navBtn" id="5" href="#">EEO</a></div>
+                    <div><a class="navBtn" id="6" href="#">EMERGANCY</a></div>
+                    <div><a class="navBtn" id="7" href="#">SEPERATIONS</a></div>
+                    <div><a class="navBtn" id="8" href="#">REPORTS</a></div>
+                    <!-- <div><a id="detailBtn" href="#">DETAIL</a></div>
+                    <div><a id="perfomanceBtn" href="#">PERFORMANCE</a></div>
+                    <div><a id="contactsBtn" href="#">CONTACTS</a></div>
+                    <div><a id="wagesBtn" href="#">WAGES</a></div>
+                    <div><a id="taxesBtn" href="#">TAXES</a></div>
+                    <div><a id="eeoBtn" href="#">EEO</a></div>
+                    <div><a id="emergancyBtn" href="#">EMERGANCY</a></div>
+                    <div><a id="seperationsBtn" href="#">SEPERATIONS</a></div>
+                    <div><a href="#">REPORTS</a></div> -->
+                </div>
+            </div>
+            <div class="box2">
+
+                <div class="search-section">
+                    <div>
+                        <p>Search by last name</p>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>SSN</th>
+                        <th>Employee ID</th>
+                        <th>Location</th>
+                        <th>Department</th>
+                        <th>Hire Date</th>
+                        <th>Job Title</th>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div class="box3">
+                <div class="form-section">
+                    <div id="detailDiv"></div>
+                    <div id="performanceDiv"> </div>
+                    <div id="contactsDiv"></div>
+                    <div id="wagesDiv"></div>
+                    <div id="taxesDiv"></div>
+                    <div id="emergancyDiv"></div>
+                    <div id="seperationsDiv"></div>
+                    <div id="eeoDiv"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+
+
+</body>
+
+</html>
