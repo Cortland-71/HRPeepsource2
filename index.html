@@ -8,33 +8,8 @@
     <link rel="stylesheet" href="tableStyle.css">
     <title>HRPeepsource v1.0</title>
     <script src="jquery.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            var navList = ['#detailDiv', '#performanceDiv', '#contactsDiv',
-                '#wagesDiv', '#taxesDiv', '#emergancyDiv', '#seperationsDiv', '#eeoDiv'];
-
-            var numOfNavBtn = 9;
-
-            $(".search-section div").hide().slideDown(500);
-
-            for (var i = 0; i < numOfNavBtn; i++) {
-                $("#" + i).hide();
-                $("#" + i).fadeIn((i + 1) * 80);
-            }
-
-            $(".navBtn").on('click', function () {
-                var index = $(this).attr("id");
-                var selectedDiv = navList[index];
-                $(selectedDiv).show();
-                for (var i = 0; i < numOfNavBtn; i++) {
-                    if (selectedDiv != navList[i]) {
-                        $(navList[i]).hide();
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="onLoad.js"></script>
+    <script src="io.js"></script>
 </head>
 
 <body>
@@ -65,15 +40,6 @@
                     <div><a class="navBtn" id="6" href="#">EMERGANCY</a></div>
                     <div><a class="navBtn" id="7" href="#">SEPERATIONS</a></div>
                     <div><a class="navBtn" id="8" href="#">REPORTS</a></div>
-                    <!-- <div><a id="detailBtn" href="#">DETAIL</a></div>
-                    <div><a id="perfomanceBtn" href="#">PERFORMANCE</a></div>
-                    <div><a id="contactsBtn" href="#">CONTACTS</a></div>
-                    <div><a id="wagesBtn" href="#">WAGES</a></div>
-                    <div><a id="taxesBtn" href="#">TAXES</a></div>
-                    <div><a id="eeoBtn" href="#">EEO</a></div>
-                    <div><a id="emergancyBtn" href="#">EMERGANCY</a></div>
-                    <div><a id="seperationsBtn" href="#">SEPERATIONS</a></div>
-                    <div><a href="#">REPORTS</a></div> -->
                 </div>
             </div>
             <div class="box2">
@@ -87,7 +53,8 @@
                     </div>
                 </div>
 
-                <table>
+                
+                <table id="mainTable">
                     <tr>
                         <th>Last Name</th>
                         <th>First Name</th>
@@ -99,6 +66,8 @@
                         <th>Job Title</th>
                     </tr>
 
+                    
+                    
                 </table>
 
             </div>
@@ -120,7 +89,7 @@
 
     </footer>
 
-
+    <script>getData()</script>
 </body>
 
 </html>
