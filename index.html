@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="tableStyle.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/tableStyle.css">
+    <link rel="stylesheet" href="styles/inputStyle.css">
     <title>HRPeepsource v1.0</title>
-    <script src="jquery.js"></script>
-    <script src="onLoad.js"></script>
-    <script src="io.js"></script>
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/onLoad.js"></script>
+    <script src="scripts/io.js"></script>
 </head>
 
 <body>
@@ -53,9 +54,8 @@
                     </div>
                 </div>
 
-                
                 <table id="mainTable">
-                    <tr>
+                    <tr id="testRow">
                         <th>Last Name</th>
                         <th>First Name</th>
                         <th>SSN</th>
@@ -66,14 +66,89 @@
                         <th>Job Title</th>
                     </tr>
 
-                    
-                    
                 </table>
 
             </div>
             <div class="box3">
                 <div class="form-section">
-                    <div id="detailDiv"></div>
+                    <div id="detailDiv">
+                        <button>SAVE</button>
+                        <form action="GET">
+                            <h3>Detail</h3>
+                            <div class="salutationParent">
+                                <p>Salutation</p>
+                                <select id="salutationField" name="salutation">
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Miss.">Miss.</option>
+                                </select>
+
+                            </div>
+                            <div class="nameSection">
+                                <div>
+                                    <p>First Name</p>
+                                    <input id="firstNameField" type="text" name="firstName">
+                                </div>
+                                
+                                <div>
+                                    <p>M</p>
+                                    <input id="middleNameField" type="text" name="middleName">
+                                </div>
+                                
+                                <div>
+                                    <p>Last Name</p>
+                                    <input id="lastNameField" type="text" name="lastName">
+                                </div>
+                            </div>
+
+                            <div class="idSection">
+                                <div>
+                                    <p>SSN</p>
+                                    <input id="ssnField" type="text" name="ssn">
+                                </div>
+                                <div>
+                                    <p>ID</p>
+                                    <input id="idField" type="text" name="workId">
+                                </div>
+
+                                <div>
+                                    <p>Hire Date</p>
+                                    <input id="hireDateField" type="date" name="hireDate">
+                                </div>
+                            </div>
+                            
+                            <div class="statusSection">
+                                <div>
+                                    <p>Work Status</p>
+                                    <input id="workStatusField" type="text" name="workStatus">
+                                </div>
+
+                                <div>
+                                    <p>Employee Status</p>
+                                    <input id="employeeStatusField" type="text" name="employeeStatus">
+                                </div>
+                                <div>
+                                    <p>Job Title</p>
+                                    <input id="jobTitleField" type="text" name="jobTitle">
+                                </div>
+
+                                <div>
+                                    <p>Location</p>
+                                    <input id="locationField" type="text" name="location">
+                                </div>
+
+                                <div>
+                                    <p>Department</p>
+                                    <input id="departmentField" type="text" name="department">
+                                </div>
+                            </div>
+
+
+                        </form>
+                        <br><br><br>
+                        <p id="testOutput">something</p>
+                    </div>
+
                     <div id="performanceDiv"> </div>
                     <div id="contactsDiv"></div>
                     <div id="wagesDiv"></div>
@@ -89,7 +164,7 @@
 
     </footer>
 
-    <script>getData()</script>
+    <script>getData();</script>
 </body>
 
 </html>

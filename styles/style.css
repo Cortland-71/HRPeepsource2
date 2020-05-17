@@ -29,8 +29,9 @@ header {
     left: 5%;
     font-weight: lighter;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     font-size: 3rem;
-    letter-spacing: -.3rem;
+    letter-spacing: -.1rem;
     color: rgb(216, 216, 216)
 }
 
@@ -167,55 +168,5 @@ header {
     width: auto;
 }
 
-.form-section {
-    
-    position: sticky;
-    top: 108px;
-    width: 100%;
-    height: 800px;
-    
-}
 
-.form-section div {
-    position: absolute;
-    width: 100%;
-    height: 800px;
-    
-    
-   
-}
-
-#detailDiv {
-    z-index: 1;
-    background-color: green;
-}
-
-#performanceDiv {
-    background-color: rgb(128, 126, 0);
-}
-
-#contactsDiv {
-    background-color: rgb(34, 134, 228);
-}
-
-#wagesDiv {
-    background-color: rgb(192, 191, 135);
-}
-
-#taxesDiv {
-    background-color: rgb(42, 48, 82);
-}
-
-#eeoDiv {
-    background-color: rgb(70, 0, 128);
-}
-
-#emergancyDiv {
-    background-color: rgb(128, 0, 90);
-}
-
-#seperationsDiv {
-    
-    background-color: rgb(17, 17, 17);
-}
 

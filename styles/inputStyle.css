@@ -1,0 +1,89 @@
+.form-section {
+    position: sticky;
+    top: 108px;
+    width: 100%;
+    height: 800px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .8rem;
+    
+}
+
+.form-section input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+#middleNameField, #idField {
+    width: 100px;
+
+}
+
+.form-section select {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .9rem;
+    width: 100px;
+}
+
+.nameSection div, .idSection div{
+
+    float: left;
+    margin: 8px 10px;
+
+}
+
+.idSection input, .nameSection input {
+    width: 150px;
+}
+
+.salutationParent {
+    margin: 5px 10px;
+}
+
+#detailDiv {
+    z-index: 1;
+    width: 100%;
+    height: 800px;
+    background-color: rgb(219, 219, 219);
+}
+
+#performanceDiv {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(128, 126, 0);
+}
+
+#contactsDiv {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(34, 134, 228);
+}
+
+#wagesDiv {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(192, 191, 135);
+}
+
+#taxesDiv {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(42, 48, 82);
+}
+
+#eeoDiv {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(70, 0, 128);
+}
+
+#emergancyDiv {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(128, 0, 90);
+}
+
+#seperationsDiv {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(17, 17, 17);
+}
