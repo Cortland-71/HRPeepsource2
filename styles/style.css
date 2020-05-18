@@ -107,11 +107,12 @@ header {
 
 .box1 {
     background-color: rgb(219, 219, 219);
+    
     width: auto;
 }
 
 .box2 {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 250, 228);
     width: auto;
     
 }
@@ -146,9 +147,9 @@ header {
 }
 
 .search-section input {
-    width: 350px;
+    width: 400px;
     height: auto;
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: rgb(71, 71, 71);
     background: rgb(255, 255, 255);
     padding: 3px;
@@ -160,8 +161,47 @@ header {
     border-color: grey;
     border-left-color: rgb(16, 138, 0);
     border-left-width: 8px;
-    border-radius: 3px;
+    border-right-width: 0;
 }
+
+.search-section input:focus {
+    outline: none;
+}
+
+.clearButtonParent {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid grey;
+    border-left-width: 0;
+}
+
+.clearButton {
+    position: absolute;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(216, 216, 216);
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+.clearButton:hover {
+    cursor: pointer;
+}
+
+.clearButton:focus {
+    outline: none;
+}
+
 
 .box3 {
     background-color: rgb(219, 219, 219);

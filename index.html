@@ -11,6 +11,8 @@
     <script src="scripts/jquery.js"></script>
     <script src="scripts/onLoad.js"></script>
     <script src="scripts/io.js"></script>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/tableHandler.js"></script>
 </head>
 
 <body>
@@ -50,16 +52,21 @@
                         <p>Search by last name</p>
                     </div>
                     <div>
-                        <input type="text" placeholder="Search...">
+                        <input id="searchField" type="text" onkeypress="search(event)" placeholder="Search...">
+                    </div>
+                    <div class="clearButtonParent">
+                        <div class="clearButton" id="clearSearchBarButton">
+                            x
+                        </div>
                     </div>
                 </div>
 
                 <table id="mainTable">
-                    <tr id="testRow">
+                    <tr id="headRow">
                         <th>Last Name</th>
                         <th>First Name</th>
                         <th>SSN</th>
-                        <th>Employee ID</th>
+                        <th>ID</th>
                         <th>Location</th>
                         <th>Department</th>
                         <th>Hire Date</th>
@@ -67,86 +74,194 @@
                     </tr>
 
                 </table>
-
             </div>
             <div class="box3">
                 <div class="form-section">
                     <div id="detailDiv">
-                        <button>SAVE</button>
+
+                        <div class="banner">
+                            <h3 class="currentTabTitle">DETAIL</h3>
+                            <div class="buttons">
+                                <button id="cancelButton">Cancel</button>
+                                <button id="saveButton">SAVE</button>
+                            </div>
+
+                        </div>
+                        <hr>
                         <form action="GET">
-                            <h3>Detail</h3>
+
                             <div class="salutationParent">
-                                <p>Salutation</p>
-                                <select id="salutationField" name="salutation">
-                                    <option value="Mr.">Mr.</option>
-                                    <option value="Mrs.">Mrs.</option>
-                                    <option value="Miss.">Miss.</option>
-                                </select>
-
+                                <div class="salutationGroup">
+                                    <p>Salutation</p>
+                                    <select id="salutationField" name="salutation">
+                                        <option value="Mr.">Mr.</option>
+                                        <option value="Mrs.">Mrs.</option>
+                                        <option value="Miss.">Miss.</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="nameSection">
-                                <div>
-                                    <p>First Name</p>
-                                    <input id="firstNameField" type="text" name="firstName">
+                            <div class="nameParent">
+                                <div class="nameGroup">
+                                    <div class="firstNameSection">
+                                        <p>First Name</p>
+                                        <input id="firstNameField" type="text" name="firstName">
+                                    </div>
+                                    <div class="middleNameSection">
+                                        <p>M</p>
+                                        <input id="middleNameField" type="text" name="middleName">
+                                    </div>
+                                    <div class="lastNameSection">
+                                        <p>Last Name</p>
+                                        <input id="lastNameField" type="text" name="lastName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="idParent">
+                                <div class="idGroup">
+                                    <div class="ssnSection">
+                                        <p>SSN</p>
+                                        <input id="ssnField" type="text" name="ssn">
+                                    </div>
+                                    <div class="idSection">
+                                        <p>ID</p>
+                                        <input id="idField" type="text" name="workId">
+                                    </div>
+                                    <div class="hireDateSection">
+                                        <p>Hire Date</p>
+                                        <input id="hireDateField" type="date" name="hireDate">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="statusParent">
+                                <div class="statusGroup">
+                                    <div>
+                                        <p>Work Status</p>
+                                        <select id="workStatusField" name="workStatus">
+                                            <option value="Full-Time">Full-time</option>
+                                            <option value="Part-Time">Part-time</option>
+                                        </select>
+
+                                    </div>
+                                    <div>
+                                        <p>Employment Status</p>
+                                        <select id="employmentStatusField" name="employmentStatus">
+                                            <option value="Active">Active</option>
+                                            <option value="Inactive">Inactive</option>
+                                            <option value="Terminated">Terminated</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <p>Location</p>
+                                        <select id="locationField" name="location">
+                                            <option value="Gaming">Gaming</option>
+                                            <option value="Administration">Administration</option>
+                                            <option value="Admin">Admin</option>
+                                            <option value="Food and Beverage">Food and Beverage</option>
+                                            <option value="Marketing">Marketing</option>
+                                            <option value="Regulatory">Regulatory</option>
+                                            <option value="MIS">MIS</option>
+                                            <option value="Security">Security</option>
+                                            <option value="Surveillance">Surveillance</option>
+                                            <option value="Human Resources">Human Resources</option>
+                                        </select>
+
+                                    </div>
+                                    <div>
+                                        <p>Department</p>
+                                        <select id="departmentField" name="department">
+                                            <option value="Administration 03960">Administration 03960</option>
+                                            <option value="Bingo 021">Bingo 021</option>
+                                            <option value="Buckys Bar 03897">Buckys Bar 03897</option>
+                                            <option value="Buckys Cafe 03896">Buckys Cafe 03896</option>
+                                            <option value="Cage 037/03810 50/50">Cage 037/03810 50/50</option>
+                                            <option value="Cage 03710">Cage 03710</option>
+                                            <option value="Cage 03810">Cage 03810</option>
+                                            <option value="Cage 03910">Cage 03910</option>
+                                            <option value="Cantina 037/03897 50/50">Cantina 037/03897 50/50</option>
+                                            <option value="Cantina 03797">Cantina 03797</option>
+                                            <option value="Casino Shift Manager 03980 50/50">Casino Shift Manager 03980
+                                                50/50</option>
+                                            <option value="Clean Maint 037/03820 50/50">Clean Maint 037/03820 50/50
+                                            </option>
+                                            <option value="Cleaning & Maintenance 03720">Cleaning & Maintenance 03720
+                                            </option>
+                                            <option value="Cleaning & Maintenance 03820">Cleaning & Maintenance 03820
+                                            </option>
+                                            <option value="Department">Department</option>
+                                            <option value="Drop Crew 03730">Drop Crew 03730</option>
+                                            <option value="Drop Crew 03830">Drop Crew 03830</option>
+                                            <option value="Drop Crew 03930">Drop Crew 03930</option>
+                                            <option value="Finance 03940">Finance 03940</option>
+                                            <option value="Floor Attendant 03780 ">Floor Attendant 03780 </option>
+                                            <option value="Floor Attendant 03880 ">Floor Attendant 03880 </option>
+                                            <option value="Gold Rush Club 037/038 50/50">Gold Rush Club 037/038 50/50
+                                            </option>
+                                            <option value="Gold Rush Club 03787">Gold Rush Club 03787</option>
+                                            <option value="Gold Rush Club 03887">Gold Rush Club 03887</option>
+                                            <option value="Human Resources 03955">Human Resources 03955</option>
+                                            <option value="Inspectors 03050">Inspectors 03050</option>
+                                            <option value="Inventory Control 03967">Inventory Control 03967</option>
+                                            <option value="Investigators/Cert 03040">Investigators/Cert 03040</option>
+                                            <option value="Kitchen 037/03896 50/50">Kitchen 037/03896 50/50</option>
+                                            <option value="Kitchen 03796">Kitchen 03796</option>
+                                            <option value="MIS 03990">MIS 03990</option>
+                                            <option value="Marketing 03985">Marketing 03985</option>
+                                            <option value="Purchasing 03965">Purchasing 03965</option>
+                                            <option value="Security 037/03870 50/50">Security 037/03870 50/50</option>
+                                            <option value="Security 03770">Security 03770</option>
+                                            <option value="Security 03870">Security 03870</option>
+                                            <option value="Shuttle 03925">Shuttle 03925</option>
+                                            <option value="Slot 037/03850 50/50">Slot 037/03850 50/50</option>
+                                            <option value="Slot 03750">Slot 03750</option>
+                                            <option value="Slot 03850">Slot 03850</option>
+                                            <option value="Staff 03020">Staff 03020</option>
+                                            <option value="Surveillance 037/03875 50/50">Surveillance 037/03875 50/50
+                                            </option>
+                                            <option value="Surveillance 03775">Surveillance 03775</option>
+                                            <option value="Surveillance 03875">Surveillance 03875</option>
+                                            <option value="TG 3745 50/50">TG 3745 50/50</option>
+                                            <option value="Table Games 03745">Table Games 03745</option>
+                                            <option value="Table Games 03746">Table Games 03746</option>
+                                            <option value="Table Games 03845">Table Games 03845</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <p>Job Title</p>
+                                        <input id="jobTitleField" type="text" name="jobTitle">
+                                    </div>
+
+                                   
                                 </div>
                                 
-                                <div>
-                                    <p>M</p>
-                                    <input id="middleNameField" type="text" name="middleName">
-                                </div>
-                                
-                                <div>
-                                    <p>Last Name</p>
-                                    <input id="lastNameField" type="text" name="lastName">
+                            </div>
+
+                            <div class="hoursParent">
+                                <div class="hoursGroup">
+                                    <div class="dayHoursSection">
+                                        <p>Day Hours</p>
+                                        <input id="dayHoursField" type="text" name="dayHours">
+                                    </div>
+    
+                                    <div class="weekHoursSection">
+                                        <p>Week Hours</p>
+                                        <input id="weekHoursField" type="text" name="weekHours">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="idSection">
-                                <div>
-                                    <p>SSN</p>
-                                    <input id="ssnField" type="text" name="ssn">
-                                </div>
-                                <div>
-                                    <p>ID</p>
-                                    <input id="idField" type="text" name="workId">
-                                </div>
+                            <div class="commentParent">
+                                <div class="commentGroup">
+                                    <div>
+                                        <p>Comments</p>
+                                    </div>
+                                    <div>
+                                        <textarea id="commentTextArea" rows="5" cols="45"></textarea>
 
-                                <div>
-                                    <p>Hire Date</p>
-                                    <input id="hireDateField" type="date" name="hireDate">
+                                    </div>
                                 </div>
                             </div>
-                            
-                            <div class="statusSection">
-                                <div>
-                                    <p>Work Status</p>
-                                    <input id="workStatusField" type="text" name="workStatus">
-                                </div>
-
-                                <div>
-                                    <p>Employee Status</p>
-                                    <input id="employeeStatusField" type="text" name="employeeStatus">
-                                </div>
-                                <div>
-                                    <p>Job Title</p>
-                                    <input id="jobTitleField" type="text" name="jobTitle">
-                                </div>
-
-                                <div>
-                                    <p>Location</p>
-                                    <input id="locationField" type="text" name="location">
-                                </div>
-
-                                <div>
-                                    <p>Department</p>
-                                    <input id="departmentField" type="text" name="department">
-                                </div>
-                            </div>
-
-
                         </form>
-                        <br><br><br>
-                        <p id="testOutput">something</p>
                     </div>
 
                     <div id="performanceDiv"> </div>
