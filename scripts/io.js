@@ -1,7 +1,7 @@
 var masterArr = [];
 
 async function getData() {
-    const response = await fetch("hrDataWithHeads2.csv");
+    const response = await fetch("\\\\yganas01\\YDrive\\MIS\\HrData\\hrDataWithHeads2.csv");
     const data = await response.text();
     //this is a single dim array that holds each row
     const rows = data.split('\n');

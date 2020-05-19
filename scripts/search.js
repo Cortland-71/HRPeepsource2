@@ -1,21 +1,17 @@
 var filteredIndex = [];
+let first;
 
-function search(e) {
+function search() {
     var index;
-    if (e.keyCode == 13) {
-        var text = document.getElementById("searchField").value;
-        var capName = text.charAt(0).toUpperCase() + text.slice(1);
-        for (let i = 1; i < masterArr.length; i++) {
-            if (capName != masterArr[i][0]) {
-                document.getElementById("row"+i).outerHTML="";
-                continue;
-            }
-            filteredIndex.push(i);
+    var text = document.getElementById("searchField").value;
+    //check no case search *
+    var capName = text.charAt(0).toUpperCase() + text.slice(1);
+    for (let i = 1; i < masterArr.length; i++) {
+        if (!masterArr[i][0].includes(capName)) {
+            document.getElementById("row"+i).style.display = 'none';
+        } else {
+            document.getElementById("row"+i).style.display = '';
         }
-        let first = filteredIndex[0];
-        $("#row"+first).addClass("selected");
-        $("#row"+first).addClass("selected:hover");
-        setDetailProperties(first, fieldIdList);
     }
 }
 
@@ -24,5 +20,10 @@ $(document).ready(function () {
         var search = document.getElementById("searchField");
         search.value = "";
         search.focus();
+        for (let i = 1; i < masterArr.length; i++) {
+            if(document.getElementById("row"+i).style.display == 'none') {
+                document.getElementById("row"+i).style.display = '';
+            }
+        }
     })
 })

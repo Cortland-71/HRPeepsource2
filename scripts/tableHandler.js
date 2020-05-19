@@ -1,5 +1,5 @@
 var fieldIdList = ["firstNameField", "lastNameField", "ssnField", "idField", "locationField", "departmentField",
-            "hireDateField", "jobTitleField", "salutationField", "middleNameField", "workStatusField", "employmentStatusField"];
+            "hireDateField", "jobTitleField", "middleNameField", "workStatusField", "employmentStatusField"];
 
 function getTableHandler() {
     $(document).ready(function () {
